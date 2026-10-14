@@ -1,38 +1,122 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+
+.main-header {
+  background: #244936;
+  color: #fffdf5;
+  padding: 26px 24px;
+}
+
+.header-content {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  gap: 18px;
+  margin: 0 auto;
+  max-width: 1080px;
 }
 
-.App-link {
-  color: #61dafb;
+.garden-mark {
+  flex: 0 0 auto;
+  height: 68px;
+  width: 68px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-eyebrow,
+.section-kicker {
+  color: #e7bb62;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.main-header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.garden-content {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 42px 24px 64px;
+}
+
+.garden-section + .garden-section {
+  border-top: 1px solid #d5dfcf;
+  margin-top: 44px;
+  padding-top: 36px;
+}
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-kicker {
+  color: #a34d45;
+  margin-bottom: 6px;
+}
+
+.section-heading h2 {
+  color: #244936;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.flower-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
+}
+
+.flower-card {
+  min-height: 220px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.flower-card:hover,
+.flower-card:focus-visible {
+  box-shadow: 0 12px 26px rgba(28, 55, 39, 0.2) !important;
+  transform: translateY(-3px);
+}
+
+.flower-card:focus-visible {
+  outline: 3px solid #244936;
+  outline-offset: 3px;
+}
+
+.flower-card-mark {
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.flower-card h3 {
+  font-size: 1.35rem;
+  margin: 0 0 16px;
+}
+
+.flower-card p {
+  color: #282e27;
+  font-size: 0.9rem;
+  margin: 7px 0;
+}
+
+@media (max-width: 520px) {
+  .main-header {
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .garden-mark {
+    height: 54px;
+    width: 54px;
+  }
+
+  .main-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .garden-content {
+    padding: 30px 18px 48px;
   }
 }

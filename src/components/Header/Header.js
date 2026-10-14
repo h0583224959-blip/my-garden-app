@@ -1,10 +1,16 @@
 import React from 'react';
-import './Header.css';
+import gardenMark from './garden-mark.svg';
 
 function Header() {
   return (
     <header className="main-header">
-      <h1>הגינה שלי</h1>
+      <div className="header-content">
+        <img className="garden-mark" src={gardenMark} alt="" />
+        <div>
+          <p className="header-eyebrow">פרחים שגדלים באהבה</p>
+          <h1>הגינה שלי</h1>
+        </div>
+      </div>
     </header>
   );
 }

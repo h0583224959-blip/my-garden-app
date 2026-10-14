@@ -1,33 +1,34 @@
 import React from 'react';
 
 function Flower({ flowerName, petalColor, centerColor }) {
-  // ערכי ברירת מחדל באמצעות תנאי מקוצר
   const actualPetalColor = petalColor ? petalColor : '#ffb6c1';
   const actualCenterColor = centerColor ? centerColor : '#2e7d32';
 
-  const handleClick = () => {
-    alert(`אני פרח מסוג ${flowerName}`);
-  };
-
   const flowerCardStyle = {
     backgroundColor: actualPetalColor,
-    color: actualCenterColor,
     border: `3px solid ${actualCenterColor}`,
-    borderRadius: '16px',
-    padding: '20px',
-    margin: '15px',
-    width: '220px',
+    borderRadius: '12px',
+    padding: '22px',
     textAlign: 'center',
     cursor: 'pointer',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 8px 20px rgba(28, 55, 39, 0.12)',
+    font: 'inherit',
+    width: '100%',
   };
 
   return (
-    <div style={flowerCardStyle} onClick={handleClick}>
-      <h2>{flowerName}</h2>
-      <p>צבע עלי כותרת: {actualPetalColor}</p>
-      <p>צבע עלה מרכזי: {actualCenterColor}</p>
-    </div>
+    <button
+      type="button"
+      className="flower-card"
+      style={flowerCardStyle}
+      aria-label={`פרח ${flowerName}`}
+      onClick={() => window.alert(`אני פרח מסוג ${flowerName}`)}
+    >
+      <span className="flower-card-mark" aria-hidden="true">✿</span>
+      <h3 style={{ color: actualCenterColor }}>{flowerName}</h3>
+      <p>צבע עלי כותרת: <span dir="ltr">{actualPetalColor}</span></p>
+      <p>צבע המרכז: <span dir="ltr">{actualCenterColor}</span></p>
+    </button>
   );
 }
 
